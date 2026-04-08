@@ -41,7 +41,7 @@ export default function Home() {
       {/* <Text style={styles.titulo}>🏠 Home</Text> */}
      <View style={styles.buttonContainer}>
   <TouchableOpacity style={styles.button}>
-    <Text style={styles.buttonText}>Ir para Sobre</Text>
+    <Text style={styles.buttonText} onPress={() => router.push('/perfil')}>Ir para Perfil</Text>
   </TouchableOpacity>
 </View>
       

@@ -14,7 +14,7 @@ export default function CardPerdido() {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => router.push('/buscar')}
+          onPress={() => router.push('/itens')}
         >
           <Ionicons name="search-outline" size={20} color="#111" style={styles.icon} />
           <Text style={styles.buttonText}>Procurar item perdido</Text>
