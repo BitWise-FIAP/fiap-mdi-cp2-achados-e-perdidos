@@ -11,6 +11,13 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
+        name="itens"
+        options={{
+          title: 'Itens',
+          tabBarIcon: ({ color }) => <Ionicons name="list" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="perfil"
         options={{
           title: 'Perfil',
