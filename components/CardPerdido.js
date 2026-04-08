@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     color: '#111',
     marginBottom: 20,
+    marginTop: 10, 
   },
   card: {
     backgroundColor: '#EC0E7A',
