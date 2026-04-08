@@ -1,3 +1,42 @@
-{
-    
-}
+[
+  {
+    "id": 1,
+    "nome": "Mochila preta",
+    "descricao": "Mochila com cadernos e estojo dentro",
+    "local_perdido": "Biblioteca",
+    "data": "2026-03-20",
+    "imagem": "https://www.k12dive.com/imgproxy/..."
+  },
+  {
+    "id": 2,
+    "nome": "Caderno azul",
+    "descricao": "Caderno universitário com anotações de cálculo",
+    "local_perdido": "Sala de aula B203",
+    "data": "2026-03-18",
+    "imagem": "https://www.k12dive.com/imgproxy/..."
+  },
+  {
+    "id": 3,
+    "nome": "Fone de ouvido",
+    "descricao": "Fone preto sem fio (apenas um lado)",
+    "local_perdido": "Laboratório de informática",
+    "data": "2026-03-15",
+    "imagem": "https://th.bing.com/th/id/R.e8d381ec42f19f4e98ae2c2f37379727?rik=fNBGF4cyaV5nHQ&pid=ImgRaw&r=0"
+  },
+  {
+    "id": 4,
+    "nome": "Garrafa de água",
+    "descricao": "Garrafa vermelha reutilizável",
+    "local_perdido": "Quadra / área esportiva",
+    "data": "2026-03-10",
+    "imagem": "hhttps://tse1.mm.bing.net/th/id/OIP.otqtmnRgaNuI9H0L1HpWDgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": 5,
+    "nome": "Casaco cinza",
+    "descricao": "Moletom esquecido",
+    "local_perdido": "Cantina",
+    "data": "2026-03-12",
+    "imagem": "https://tse4.mm.bing.net/th/id/OIP.7nnmkWQwRU6UTqkSQkx1jQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+  }
+]
