@@ -21,7 +21,7 @@ export default function Home() {
         <CardHome
           icon="cube-outline"
           title="Cadastrar item encontrado"
-          onPress={() => router.push('/cadastrar')}
+          onPress={() => router.push('/cadastro')}
         />
 
         <CardHome
