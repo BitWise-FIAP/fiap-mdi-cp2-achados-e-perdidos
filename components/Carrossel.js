@@ -5,22 +5,22 @@ const itensRecentes = [
   {
     id: '1',
     nome: 'Faires',
-    local: 'R0R0RhÃ',
-    data: '08/04/2024',
+    local: 'Recepção',
+    data: '08/04/2026',
     imagem: require('../assets/chaves.jpg'),
   },
   {
     id: '2',
     nome: 'Carteira',
     local: 'Biblioteca',
-    data: '07/04/2024',
+    data: '07/04/2026',
     imagem: require('../assets/carteira.jpg'),
   },
   {
     id: '3',
     nome: 'Garrafa',
     local: 'Sala 201',
-    data: '06/04/2024',
+    data: '06/04/2026',
     imagem: require('../assets/garrafa.webp'),
   },
 ];
@@ -77,8 +77,8 @@ export default function RecentItemsCarousel() {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 16,
-    fontWeight: '700',
+    fontSize: 18,
+    fontWeight: '900',
     color: '#2B2B2B',
     marginBottom: 10,
   },
@@ -86,10 +86,10 @@ const styles = StyleSheet.create({
     paddingRight: 8,
   },
   card: {
-    width: 250,
+    width: 300,
     backgroundColor: '#F3F3F3',
-    borderRadius: 14,
-    padding: 10,
+    borderRadius: 35,
+    padding: 15,
     marginRight: 12,
     flexDirection: 'row',
     alignItems: 'center',
@@ -97,9 +97,9 @@ const styles = StyleSheet.create({
     borderColor: '#E2E2E2',
   },
   image: {
-    width: 58,
-    height: 58,
-    borderRadius: 10,
+    width: 118,
+    height: 118,
+    borderRadius: 20,
     resizeMode: 'cover',
     marginRight: 10,
   },
