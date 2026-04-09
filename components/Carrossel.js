@@ -80,13 +80,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '900',
     color: '#2B2B2B',
-    marginBottom: 10,
+    marginBottom: 20,
   },
   listContent: {
     paddingRight: 8,
   },
   card: {
-    width: 300,
+    width: 325,
     backgroundColor: '#F3F3F3',
     borderRadius: 35,
     padding: 15,
@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
     borderColor: '#E2E2E2',
   },
   image: {
-    width: 118,
-    height: 118,
+    width: 136,
+    height: 136,
     borderRadius: 20,
     resizeMode: 'cover',
     marginRight: 10,
