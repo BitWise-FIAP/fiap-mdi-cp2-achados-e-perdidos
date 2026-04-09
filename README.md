@@ -30,7 +30,7 @@ A proposta é simples:
   - Informações do usuário
 
 - 📝 **Cadastro**
-  - Registro de novos usuários no sistema
+  - Registro de novos itens perdidos no sistema
 
 ---
 
