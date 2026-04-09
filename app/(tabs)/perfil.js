@@ -1,7 +1,9 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function Perfil() {
+   const router = useRouter();
   return (
     <ScrollView
       style={styles.container}
@@ -62,7 +64,7 @@ export default function Perfil() {
 
       <Text style={styles.sectionTitle}>Ações rápidas</Text>
 
-      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85}>
+      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85} onPress={() => router.push('/historico')}>
         <View style={styles.actionLeft}>
           <View style={styles.actionIcon}>
             <Ionicons name="time-outline" size={20} color="#E83D84" />
@@ -72,7 +74,7 @@ export default function Perfil() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85}>
+      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85} onPress={() => router.push('/configuracoes')}>
         <View style={styles.actionLeft}>
           <View style={styles.actionIcon}>
             <Ionicons name="settings-outline" size={20} color="#E83D84" />
@@ -82,7 +84,7 @@ export default function Perfil() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85}>
+      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85} onPress={() => router.push('/suporte')}>
         <View style={styles.actionLeft}>
           <View style={styles.actionIcon}>
             <Ionicons name="help-circle-outline" size={20} color="#E83D84" />
