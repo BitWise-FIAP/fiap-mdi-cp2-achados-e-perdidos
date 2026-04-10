@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 
 import CardPerdido from '../../components/CardPerdido';
@@ -10,8 +10,11 @@ export default function Home() {
   const router = useRouter();
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-      
-        <CardPerdido></CardPerdido>
+      <View style={styles.header}>
+        <Text style={styles.title}>Olá, Victor</Text>
+        <Image source={require('../../assets/fiap-logo.png')} style={styles.logo}/>
+      </View>
+      <CardPerdido></CardPerdido>
       <View style={styles.section}> 
         <Carossel></Carossel>
       </View>
@@ -57,6 +60,13 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 100,
   },
+  title: {
+    fontSize: 25,
+    fontWeight: '900',
+    color: '#111',
+    // marginBottom: 20,
+    // marginTop: 10, 
+  },
   section: {
     marginTop: 50,
   },
@@ -80,6 +90,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
+  header: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginBottom: 20,
+},
+
+
+logo: {
+  width: 100,
+  height: 50,
+  resizeMode: 'contain',
+},
  
   
 });

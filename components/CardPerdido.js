@@ -7,7 +7,7 @@ export default function CardPerdido() {
 
   return (
     <View>
-      <Text style={styles.title}>Olá, Victor</Text>
+      
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Perdeu algum item?</Text>
@@ -25,13 +25,7 @@ export default function CardPerdido() {
 }
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 25,
-    fontWeight: '900',
-    color: '#111',
-    marginBottom: 20,
-    marginTop: 10, 
-  },
+  
   card: {
     backgroundColor: '#EC0E7A',
     borderRadius: 18,
