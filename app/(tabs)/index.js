@@ -1,4 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native';
+import { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 
 import CardPerdido from '../../components/CardPerdido';
@@ -8,10 +10,32 @@ import Carossel from '../../components/Carrossel';
 
 export default function Home() {
   const router = useRouter();
+  const [userName, setUserName] = useState('Usuário');
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const token = await AsyncStorage.getItem('userToken');
+        if (token) {
+          const usersStr = await AsyncStorage.getItem('users');
+          if (usersStr) {
+            const users = JSON.parse(usersStr);
+            const user = users.find(u => u.id === token);
+            if (user) {
+              setUserName(user.nome);
+            }
+          }
+        }
+      } catch (error) {
+        console.log('Erro ao carregar usuário:', error);
+      }
+    };
+    loadUser();
+  }, []);
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
       <View style={styles.header}>
-        <Text style={styles.title}>Olá, Victor</Text>
+        <Text style={styles.title}>Olá, {userName}</Text>
         <Image source={require('../../assets/fiap-logo.png')} style={styles.logo}/>
       </View>
       <CardPerdido></CardPerdido>

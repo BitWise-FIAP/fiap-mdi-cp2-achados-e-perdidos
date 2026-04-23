@@ -1,9 +1,62 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
 export default function Perfil() {
-   const router = useRouter();
+  const router = useRouter();
+  const [user, setUser] = useState(null);
+
+  const getInitials = (nome) => {
+    if (!nome) return 'VF';
+    const words = nome.split(' ').filter(w => w.length > 0);
+    const initials = words.slice(0, 2).map(w => w[0].toUpperCase()).join('');
+    return initials || 'VF';
+  };
+
+  useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const token = await AsyncStorage.getItem('userToken');
+        if (token) {
+          const usersStr = await AsyncStorage.getItem('users');
+          if (usersStr) {
+            const users = JSON.parse(usersStr);
+            const foundUser = users.find(u => u.id === token);
+            setUser(foundUser);
+          }
+        }
+      } catch (error) {
+        console.log('Erro ao carregar usuário:', error);
+      }
+    };
+    loadUser();
+  }, []);
+
+  const handleLogout = () => {
+    Alert.alert(
+      'Sair da conta',
+      'Deseja realmente sair?',
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Sair',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await AsyncStorage.removeItem('userToken');
+              router.replace('/login');
+            } catch (error) {
+              console.log('Erro ao fazer logout:', error);
+              Alert.alert('Erro', 'Falha no logout.');
+            }
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -12,11 +65,11 @@ export default function Perfil() {
     >
       <View style={styles.headerCard}>
         <View style={styles.avatar}>
-          <Text style={styles.avatarText}>VF</Text>
+        <Text style={styles.avatarText}>{getInitials(user?.nome)}</Text>
         </View>
 
-        <Text style={styles.nome}>Victor Freire</Text>
-        <Text style={styles.email}>rm556191@fiap.com.br</Text>
+        <Text style={styles.nome}>{user?.nome || 'Nome'}</Text>
+        <Text style={styles.email}>{user?.email || 'email@exemplo.com'}</Text>
 
         <TouchableOpacity style={styles.editButton} activeOpacity={0.85}>
           <Ionicons name="create-outline" size={16} color="#FFFFFF" />
@@ -33,7 +86,7 @@ export default function Perfil() {
           </View>
           <View style={styles.infoTextArea}>
             <Text style={styles.infoLabel}>Nome</Text>
-            <Text style={styles.infoValue}>Victor Freire</Text>
+            <Text style={styles.infoValue}>{user?.nome || 'Nome'}</Text>
           </View>
         </View>
 
@@ -45,7 +98,7 @@ export default function Perfil() {
           </View>
           <View style={styles.infoTextArea}>
             <Text style={styles.infoLabel}>E-mail</Text>
-            <Text style={styles.infoValue}>rm556191@fiap.com.br</Text>
+            <Text style={styles.infoValue}>{user?.email || 'email@exemplo.com'}</Text>
           </View>
         </View>
 
@@ -94,7 +147,7 @@ export default function Perfil() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.logoutButton} activeOpacity={0.85}>
+      <TouchableOpacity style={styles.logoutButton} activeOpacity={0.85} onPress={handleLogout}>
         <Ionicons name="log-out-outline" size={18} color="#E83D84" />
         <Text style={styles.logoutText}>Sair da conta</Text>
       </TouchableOpacity>
