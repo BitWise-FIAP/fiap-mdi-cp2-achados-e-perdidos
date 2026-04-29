@@ -50,7 +50,7 @@ export default function Login() {
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <Text style={styles.titulo}>🔐 Login</Text>
+      <Text style={styles.titulo}>Login</Text>
       <TextInput
         placeholder="E-mail"
         value={email}
@@ -95,33 +95,79 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, justifyContent: 'center',
-    padding: 24, backgroundColor: '#f5f5f5',
+    flex: 1,
+    justifyContent: 'center',
+    padding: 24,
+    backgroundColor: '#F9F9FB',
   },
+
   titulo: {
-    fontSize: 32, fontWeight: 'bold',
-    textAlign: 'center', marginBottom: 32, color: '#333',
+    fontSize: 32,
+    fontWeight: '800',
+    textAlign: 'center',
+    marginBottom: 32,
+    color: '#111111',
   },
+
   input: {
-    backgroundColor: '#fff', borderWidth: 1, borderColor: '#ddd',
-    borderRadius: 10, padding: 14, marginBottom: 8, fontSize: 16,
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#EFEFF2',
+    borderRadius: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 15,
+    marginBottom: 8,
+    fontSize: 16,
+    color: '#111111',
   },
+
   senhaContainer: {
-    flexDirection: 'row', alignItems: 'center',
-    backgroundColor: '#fff', borderWidth: 1, borderColor: '#ddd',
-    borderRadius: 10, marginBottom: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#EFEFF2',
+    borderRadius: 16,
+    marginBottom: 8,
+    paddingRight: 4,
   },
-  olho: { padding: 14, fontSize: 20 },
-  erro: { color: 'red', marginBottom: 8, marginLeft: 4 },
+
+  olho: {
+    padding: 14,
+    fontSize: 20,
+  },
+
+  erro: {
+    color: '#E83D84',
+    marginBottom: 8,
+    marginLeft: 6,
+    fontSize: 13,
+    fontWeight: '600',
+  },
+
   botao: {
-    backgroundColor: '#6c47ff', borderRadius: 10,
-    padding: 16, marginTop: 16, alignItems: 'center',
+    backgroundColor: '#E83D84',
+    borderRadius: 16,
+    paddingVertical: 16,
+    marginTop: 18,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  botaoTexto: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+
+  botaoTexto: {
+    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: '700',
+  },
+
   linkBotao: {
-    marginTop: 16, alignItems: 'center',
+    marginTop: 18,
+    alignItems: 'center',
   },
-  linkTexto: { 
-    color: '#6c47ff', fontSize: 16, fontWeight: '600' 
+
+  linkTexto: {
+    color: '#E83D84',
+    fontSize: 15,
+    fontWeight: '700',
   },
 });
