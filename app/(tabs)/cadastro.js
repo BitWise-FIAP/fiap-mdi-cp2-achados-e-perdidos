@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTheme } from '../ThemeContext';
 
 export default function Cadastro() {
   const router = useRouter();
@@ -11,6 +12,7 @@ export default function Cadastro() {
   const [local, setLocal] = useState('');
   const [data, setData] = useState('');
   const [imagem, setImagem] = useState('');
+  const { tema } = useTheme();
 
   const pickImage = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -66,34 +68,38 @@ export default function Cadastro() {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>Cadastrar Item</Text>
+    <ScrollView style={[styles.container, { backgroundColor: tema.fundo }]}>
+      <Text style={[styles.titulo, {color: tema.texto}]}>Cadastrar Item</Text>
 
       <TextInput
-        style={styles.input}
+        style={[styles.input, { backgroundColor: tema.card }, {borderColor: tema.borda}]}
         placeholder="Nome do item"
+        placeholderTextColor={tema.texto}
         value={nome}
         onChangeText={setNome}
       />
 
       <TextInput
-        style={styles.input}
+        style={[styles.input, { backgroundColor: tema.card }, {borderColor: tema.borda}]}
         placeholder="Descrição"
+        placeholderTextColor={tema.texto}
         value={descricao}
         onChangeText={setDescricao}
         multiline
       />
 
       <TextInput
-        style={styles.input}
+        style={[styles.input, { backgroundColor: tema.card }, {borderColor: tema.borda}]}
         placeholder="Local perdido"
+        placeholderTextColor={tema.texto}
         value={local}
         onChangeText={setLocal}
       />
 
       <TextInput
-        style={styles.input}
+        style={[styles.input, { backgroundColor: tema.card }, {borderColor: tema.borda}]}
         placeholder="Data (YYYY-MM-DD)"
+        placeholderTextColor={tema.texto}
         value={data}
         onChangeText={setData}
       />
@@ -107,8 +113,9 @@ export default function Cadastro() {
       ) : null}
 
       <TextInput
-        style={styles.input}
+        style={[styles.input, , { backgroundColor: tema.card }, {borderColor: tema.borda}]}
         placeholder="URL da imagem (opcional)"
+        placeholderTextColor={tema.texto}
         value={imagem}
         onChangeText={setImagem}
       />

@@ -22,11 +22,11 @@ export function ThemeProvider({ children }) {
   };
 
   const tema = {
-    fundo: modoEscuro ? '#121212' : '#F9F9FB',
-    card: modoEscuro ? '#1E1E1E' : '#FFFFFF',
+    fundo: modoEscuro ? '#1C1C1C' : '#F9F9FB',
+    card: modoEscuro ? '#2A2A2A' : '#FFFFFF',
     texto: modoEscuro ? '#FFFFFF' : '#111111',
     subtitulo: modoEscuro ? '#B8B8B8' : '#666666',
-    borda: modoEscuro ? '#333333' : '#EFEFF2',
+    borda: modoEscuro ? '#505050' : '#EFEFF2',
     divisor: modoEscuro ? '#333333' : '#F1F1F3',
   };
 

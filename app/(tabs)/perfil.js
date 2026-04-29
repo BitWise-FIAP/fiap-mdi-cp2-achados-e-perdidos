@@ -65,12 +65,12 @@ export default function Perfil() {
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
-      <View style={styles.headerCard}>
+      <View style={[styles.headerCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
         <View style={styles.avatar}>
         <Text style={styles.avatarText}>{getInitials(user?.nome)}</Text>
         </View>
 
-        <Text style={styles.nome}>{user?.nome || 'Nome'}</Text>
+        <Text style={[styles.nome, { color: tema.texto }]}>{user?.nome || 'Nome'}</Text>
         <Text style={styles.email}>{user?.email || 'email@exemplo.com'}</Text>
 
         <TouchableOpacity style={styles.editButton} activeOpacity={0.85}>
@@ -79,20 +79,20 @@ export default function Perfil() {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.sectionTitle}>Informações pessoais</Text>
+      <Text style={[styles.sectionTitle, { color: tema.texto }]}>Informações pessoais</Text>
 
-      <View style={styles.infoCard}>
+      <View style={[styles.infoCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
         <View style={styles.infoRow}>
           <View style={styles.iconBox}>
             <Ionicons name="person-outline" size={20} color="#E83D84" />
           </View>
           <View style={styles.infoTextArea}>
             <Text style={styles.infoLabel}>Nome</Text>
-            <Text style={styles.infoValue}>{user?.nome || 'Nome'}</Text>
+            <Text style={[styles.infoValue, { color: tema.texto }]}>{user?.nome || 'Nome'}</Text>
           </View>
         </View>
 
-        <View style={styles.divider} />
+        <View style={[styles.divider, {backgroundColor: tema.borda}]} />
 
         <View style={styles.infoRow}>
           <View style={styles.iconBox}>
@@ -100,11 +100,11 @@ export default function Perfil() {
           </View>
           <View style={styles.infoTextArea}>
             <Text style={styles.infoLabel}>E-mail</Text>
-            <Text style={styles.infoValue}>{user?.email || 'email@exemplo.com'}</Text>
+            <Text style={[styles.infoValue, { color: tema.texto }]}>{user?.email || 'email@exemplo.com'}</Text>
           </View>
         </View>
 
-        <View style={styles.divider} />
+        <View style={[styles.divider, {backgroundColor: tema.borda}]} />
 
         <View style={styles.infoRow}>
           <View style={styles.iconBox}>
@@ -112,39 +112,39 @@ export default function Perfil() {
           </View>
           <View style={styles.infoTextArea}>
             <Text style={styles.infoLabel}>Telefone</Text>
-            <Text style={styles.infoValue}>(11) 99999-9999</Text>
+            <Text style={[styles.infoValue, { color: tema.texto }]}>(11) 99999-9999</Text>
           </View>
         </View>
       </View>
 
-      <Text style={styles.sectionTitle}>Ações rápidas</Text>
+      <Text style={[styles.sectionTitle, { color: tema.texto }]}>Ações rápidas</Text>
 
-      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85} onPress={() => router.push('/historico')}>
+      <TouchableOpacity style={[styles.actionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85} onPress={() => router.push('/historico')}>
         <View style={styles.actionLeft}>
           <View style={styles.actionIcon}>
             <Ionicons name="time-outline" size={20} color="#E83D84" />
           </View>
-          <Text style={styles.actionText}>Histórico de solicitações</Text>
+          <Text style={[styles.actionText, , { color: tema.texto }]}>Histórico de solicitações</Text>
         </View>
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85} onPress={() => router.push('/configuracoes')}>
+      <TouchableOpacity style={[styles.actionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85} onPress={() => router.push('/configuracoes')}>
         <View style={styles.actionLeft}>
           <View style={styles.actionIcon}>
             <Ionicons name="settings-outline" size={20} color="#E83D84" />
           </View>
-          <Text style={styles.actionText}>Configurações da conta</Text>
+          <Text style={[styles.actionText, { color: tema.texto }]}>Configurações da conta</Text>
         </View>
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.actionCard} activeOpacity={0.85} onPress={() => router.push('/suporte')}>
+      <TouchableOpacity style={[styles.actionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85} onPress={() => router.push('/suporte')}>
         <View style={styles.actionLeft}>
           <View style={styles.actionIcon}>
             <Ionicons name="help-circle-outline" size={20} color="#E83D84" />
           </View>
-          <Text style={styles.actionText}>Ajuda e suporte</Text>
+          <Text style={[styles.actionText, { color: tema.texto }]}>Ajuda e suporte</Text>
         </View>
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>

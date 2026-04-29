@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from '../ThemeContext';
 
 import itensData from '../../storage/itens.json';
 
 export default function Itens() {
   const router = useRouter();
   const [itens, setItens] = useState([]);
+  const { tema } = useTheme();
 
   useFocusEffect(() => {
     const loadItens = async () => {
@@ -21,7 +23,7 @@ export default function Itens() {
   });
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: tema.fundo }]}>
       <View style={styles.header}>
         <Text style={styles.titulo}>Itens Perdidos</Text>
         <Text style={styles.descricao}>Lista completa de itens perdidos e encontrados na FIAP</Text>
@@ -32,7 +34,7 @@ export default function Itens() {
           <Text style={styles.empty}>Nenhum item cadastrado ainda.</Text>
         ) : (
           itens.map(item => (
-            <View key={item.id} style={styles.card}>
+            <View key={item.id} style={[styles.card, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
               <Image 
                 source={{ uri: item.imagem }}
                 style={styles.imagem}
@@ -40,7 +42,7 @@ export default function Itens() {
                 onError={(e) => console.log('ERRO IMG:', item.imagem)}
               />
               <View style={styles.cardContent}>
-                <Text style={styles.nome}>{item.nome}</Text>
+                <Text style={[styles.nome, { color: tema.texto }]}>{item.nome}</Text>
                 <Text style={styles.desc}>{item.descricao}</Text>
                 {/* <Text style={styles.local}>📍 {item.local_perdido}</Text> */}
                 <View style={styles.row}>

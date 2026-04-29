@@ -7,10 +7,13 @@ import CardPerdido from '../../components/CardPerdido';
 import CardHome from '../../components/CardHome';
 import Carossel from '../../components/Carrossel';
 
+import { useTheme } from '../ThemeContext';
+
 
 export default function Home() {
   const router = useRouter();
   const [userName, setUserName] = useState('Usuário');
+  const { tema } = useTheme();
 
   useEffect(() => {
     const loadUser = async () => {
@@ -33,9 +36,9 @@ export default function Home() {
     loadUser();
   }, []);
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Olá, {userName}</Text>
+    <ScrollView style={[styles.container, { backgroundColor: tema.fundo }]} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+      <View style={[styles.header, { backgroundColor: tema.fundo }]}>
+        <Text style={[styles.title, { color: tema.texto }]}>Olá, {userName}</Text>
         <Image source={require('../../assets/fiap-logo.png')} style={styles.logo}/>
       </View>
       <CardPerdido></CardPerdido>

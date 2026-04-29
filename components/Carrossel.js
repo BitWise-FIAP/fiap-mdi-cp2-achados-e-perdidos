@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from '../app/ThemeContext';
 
 const itensRecentes = [
   {
@@ -26,12 +27,13 @@ const itensRecentes = [
 ];
 
 function ItemCard({ item, onPress }) {
+  const { tema } = useTheme();
   return (
-    <TouchableOpacity style={styles.card} activeOpacity={0.85} onPress={onPress}>
+    <TouchableOpacity style={[styles.card, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85} onPress={onPress}>
       <Image source={item.imagem} style={styles.image} />
 
       <View style={styles.info}>
-        <Text style={styles.nome} numberOfLines={1}>
+        <Text style={[styles.nome, { color: tema.texto }]} numberOfLines={1}>
           {item.nome}
         </Text>
 
@@ -54,9 +56,10 @@ function ItemCard({ item, onPress }) {
 }
 
 export default function RecentItemsCarousel() {
+  const { tema } = useTheme();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Itens encontrados recentemente</Text>
+      <Text style={[styles.title, { color: tema.texto }]}>Itens encontrados recentemente</Text>
 
       <FlatList
         data={itensRecentes}

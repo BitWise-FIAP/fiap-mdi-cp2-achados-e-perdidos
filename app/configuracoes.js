@@ -16,8 +16,8 @@ export default function Configuracoes() {
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.header}>
-        <Text style={styles.title}>Configurações da conta</Text>
-        <Text style={styles.subtitle}>
+        <Text style={[styles.title,{ color: tema.texto }]}>Configurações da conta</Text>
+        <Text style={[styles.subtitle]}>
           Gerencie preferências, notificações e opções da sua conta.
         </Text>
       </View>
@@ -35,16 +35,16 @@ export default function Configuracoes() {
         </View>
       </View>
 
-      <Text style={styles.sectionTitle}>Preferências</Text>
+      <Text style={[styles.sectionTitle, { color: tema.texto }]}>Preferências</Text>
 
-      <View style={styles.settingsCard}>
+      <View style={[styles.settingsCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
         <View style={styles.settingRow}>
           <View style={styles.settingLeft}>
             <View style={styles.iconBox}>
               <Ionicons name="notifications-outline" size={20} color="#E83D84" />
             </View>
             <View>
-              <Text style={styles.settingTitle}>Notificações</Text>
+              <Text style={[styles.settingTitle, { color: tema.texto }]}>Notificações</Text>
               <Text style={styles.settingSubtitle}>Receber avisos sobre itens e atualizações</Text>
             </View>
           </View>
@@ -57,7 +57,7 @@ export default function Configuracoes() {
           />
         </View>
 
-        <View style={styles.divider} />
+        <View style={[styles.divider, {backgroundColor: tema.borda}]} />
 
         <View style={styles.settingRow}>
           <View style={styles.settingLeft}>
@@ -65,7 +65,7 @@ export default function Configuracoes() {
               <Ionicons name="moon-outline" size={20} color="#E83D84" />
             </View>
             <View>
-              <Text style={styles.settingTitle}>Modo escuro</Text>
+              <Text style={[styles.settingTitle, { color: tema.texto }]}>Modo escuro</Text>
               <Text style={styles.settingSubtitle}>Alterar a aparência visual do app</Text>
             </View>
           </View>
@@ -78,7 +78,7 @@ export default function Configuracoes() {
           />
         </View>
 
-        <View style={styles.divider} />
+        <View style={[styles.divider, {backgroundColor: tema.borda}]} />
 
         <View style={styles.settingRow}>
           <View style={styles.settingLeft}>
@@ -86,7 +86,7 @@ export default function Configuracoes() {
               <Ionicons name="location-outline" size={20} color="#E83D84" />
             </View>
             <View>
-              <Text style={styles.settingTitle}>Localização</Text>
+              <Text style={[styles.settingTitle, { color: tema.texto }]}>Localização</Text>
               <Text style={styles.settingSubtitle}>Permitir acesso ao local do dispositivo</Text>
             </View>
           </View>
@@ -100,15 +100,15 @@ export default function Configuracoes() {
         </View>
       </View>
 
-      <Text style={styles.sectionTitle}>Conta</Text>
+      <Text style={[styles.sectionTitle, { color: tema.texto }]}>Conta</Text>
 
-      <TouchableOpacity style={styles.optionCard} activeOpacity={0.85}>
+      <TouchableOpacity style={[styles.optionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85}>
         <View style={styles.optionLeft}>
           <View style={styles.iconBox}>
             <Ionicons name="person-outline" size={20} color="#E83D84" />
           </View>
           <View>
-            <Text style={styles.optionTitle}>Editar dados pessoais</Text>
+            <Text style={[styles.optionTitle, { color: tema.texto }]}>Editar dados pessoais</Text>
             <Text style={styles.optionSubtitle}>Atualize nome, e-mail e telefone</Text>
           </View>
         </View>
@@ -116,13 +116,13 @@ export default function Configuracoes() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionCard} activeOpacity={0.85}>
+      <TouchableOpacity style={[styles.optionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85}>
         <View style={styles.optionLeft}>
           <View style={styles.iconBox}>
             <Ionicons name="lock-closed-outline" size={20} color="#E83D84" />
           </View>
           <View>
-            <Text style={styles.optionTitle}>Alterar senha</Text>
+            <Text style={[styles.optionTitle, { color: tema.texto }]}>Alterar senha</Text>
             <Text style={styles.optionSubtitle}>Mantenha sua conta protegida</Text>
           </View>
         </View>
@@ -130,13 +130,13 @@ export default function Configuracoes() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionCard} activeOpacity={0.85}>
+      <TouchableOpacity style={[styles.optionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85}>
         <View style={styles.optionLeft}>
           <View style={styles.iconBox}>
             <Ionicons name="shield-checkmark-outline" size={20} color="#E83D84" />
           </View>
           <View>
-            <Text style={styles.optionTitle}>Privacidade</Text>
+            <Text style={[styles.optionTitle, { color: tema.texto }]}>Privacidade</Text>
             <Text style={styles.optionSubtitle}>Controle de dados e permissões</Text>
           </View>
         </View>
