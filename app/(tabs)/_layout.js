@@ -1,14 +1,26 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from '../ThemeContext';
 
 export default function TabsLayout() {
+  const { tema, modoEscuro } = useTheme();
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#EC0E7A',
-        tabBarInactiveTintColor: '#8E8E93',
-        headerShown: true,
-      }}
+      tabBarStyle: {
+      backgroundColor: tema.card,
+      borderTopColor: tema.borda,
+    },
+    tabBarActiveTintColor: '#EC0E7A',
+    tabBarInactiveTintColor: modoEscuro ? '#888' : '#8E8E93',
+    headerStyle: {
+      backgroundColor: tema.fundo,
+    },
+    headerTitleStyle: {
+      color: tema.texto,
+    },
+    headerTintColor: tema.texto,
+  }}
     >
       <Tabs.Screen
         name="index"

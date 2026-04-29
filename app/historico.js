@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from './ThemeContext';
 
 const solicitacoes = [
   {
@@ -32,14 +33,15 @@ const solicitacoes = [
 ];
 
 export default function Historico() {
+  const { tema } = useTheme();
   return (
     <ScrollView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: tema.fundo }]}
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.header}>
-        <Text style={styles.title}>Histórico de solicitações</Text>
+        <Text style={[styles.title, {color: tema.texto}]}>Histórico de solicitações</Text>
         <Text style={styles.subtitle}>
           Acompanhe o andamento das suas solicitações de retirada de itens.
         </Text>
@@ -58,10 +60,10 @@ export default function Historico() {
         </View>
       </View>
 
-      <Text style={styles.sectionTitle}>Suas solicitações</Text>
+      <Text style={[styles.sectionTitle, {color: tema.texto}]}>Suas solicitações</Text>
 
       {solicitacoes.map((solicitacao) => (
-        <TouchableOpacity key={solicitacao.id} style={styles.requestCard} activeOpacity={0.85}>
+        <TouchableOpacity key={solicitacao.id} style={[styles.requestCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.85}>
           <View style={styles.cardTop}>
             <View style={styles.itemLeft}>
               <View style={styles.iconBox}>
@@ -69,7 +71,7 @@ export default function Historico() {
               </View>
 
               <View>
-                <Text style={styles.itemTitle}>{solicitacao.item}</Text>
+                  <Text style={[styles.itemTitle, {color: tema.texto}]}>{solicitacao.item}</Text>
                 <Text style={styles.itemSubtitle}>Local: {solicitacao.local}</Text>
               </View>
             </View>

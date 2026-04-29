@@ -1,15 +1,17 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTheme } from './ThemeContext';
 
 export default function Suporte() {
+  const { tema } = useTheme();
   return (
     <ScrollView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: tema.fundo }]}
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.header}>
-        <Text style={styles.title}>Suporte</Text>
+        <Text style={[styles.title, {color: tema.texto}]}>Suporte</Text>
         <Text style={styles.subtitle}>
           Precisa de ajuda? Fale com a equipe responsável ou consulte as dúvidas mais comuns.
         </Text>
@@ -28,16 +30,16 @@ export default function Suporte() {
         </View>
       </View>
 
-      <Text style={styles.sectionTitle}>Canais de atendimento</Text>
+      <Text style={[styles.sectionTitle, {color: tema.texto}]}>Canais de atendimento</Text>
 
-      <TouchableOpacity style={styles.optionCard} activeOpacity={0.8}>
+      <TouchableOpacity style={[styles.optionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.8}>
         <View style={styles.leftArea}>
           <View style={styles.iconCircle}>
             <Ionicons name="logo-whatsapp" size={22} color="#EC0E7A" />
           </View>
 
           <View>
-            <Text style={styles.optionTitle}>WhatsApp</Text>
+            <Text style={[styles.optionTitle, {color: tema.texto}]}>WhatsApp</Text>
             <Text style={styles.optionSubtitle}>Fale com o suporte de forma rápida</Text>
           </View>
         </View>
@@ -45,14 +47,14 @@ export default function Suporte() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionCard} activeOpacity={0.8}>
+      <TouchableOpacity style={[styles.optionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.8}>
         <View style={styles.leftArea}>
           <View style={styles.iconCircle}>
             <Ionicons name="mail-outline" size={22} color="#EC0E7A" />
           </View>
 
           <View>
-            <Text style={styles.optionTitle}>E-mail</Text>
+            <Text style={[styles.optionTitle, {color: tema.texto}]}>E-mail</Text>
             <Text style={styles.optionSubtitle}>Envie sua dúvida ou solicitação</Text>
           </View>
         </View>
@@ -60,14 +62,14 @@ export default function Suporte() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionCard} activeOpacity={0.8}>
+      <TouchableOpacity style={[styles.optionCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]} activeOpacity={0.8}>
         <View style={styles.leftArea}>
           <View style={styles.iconCircle}>
             <Ionicons name="help-buoy-outline" size={22} color="#EC0E7A" />
           </View>
 
           <View>
-            <Text style={styles.optionTitle}>Perguntas frequentes</Text>
+            <Text style={[styles.optionTitle, {color: tema.texto}]}>Perguntas frequentes</Text>
             <Text style={styles.optionSubtitle}>Veja respostas para dúvidas comuns</Text>
           </View>
         </View>
@@ -75,17 +77,17 @@ export default function Suporte() {
         <Ionicons name="chevron-forward" size={20} color="#8E8E93" />
       </TouchableOpacity>
 
-      <Text style={styles.sectionTitle}>Dúvidas comuns</Text>
+      <Text style={[styles.sectionTitle, {color: tema.texto}]}>Dúvidas comuns</Text>
 
-      <View style={styles.faqCard}>
-        <Text style={styles.faqQuestion}>Como sei se meu item foi encontrado?</Text>
+      <View style={[styles.faqCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
+        <Text style={[styles.faqQuestion, {color: tema.texto}]}>Como sei se meu item foi encontrado?</Text>
         <Text style={styles.faqAnswer}>
           Você pode procurar pelo item na tela inicial ou visualizar todos os itens cadastrados no sistema.
         </Text>
       </View>
 
-      <View style={styles.faqCard}>
-        <Text style={styles.faqQuestion}>Onde retiro meu item?</Text>
+      <View style={[styles.faqCard, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
+        <Text style={[styles.faqQuestion, {color: tema.texto}]}>Onde retiro meu item?</Text>
         <Text style={styles.faqAnswer}>
           Ao encontrar o item no sistema, serão exibidos local, data, horário e instruções para retirada.
         </Text>
