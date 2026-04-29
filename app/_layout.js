@@ -1,10 +1,8 @@
 import { Stack } from 'expo-router';
 import { useState, useEffect } from 'react';
-import {
-  View,
-  ActivityIndicator
-} from 'react-native';
+import {View, ActivityIndicator} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ThemeProvider } from './ThemeContext';
 
 export default function RootLayout() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -47,43 +45,48 @@ export default function RootLayout() {
 
   if (!isAuthenticated) {
     return (
+      <ThemeProvider>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(auth)/login" />
         <Stack.Screen name="(auth)/cadastro" />
       </Stack>
+      </ThemeProvider>
     );
   }
 
   return (
+    <ThemeProvider>
     <Stack>
-    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
-    <Stack.Screen
-      name="historico"
-      options={{
-        title: 'Histórico de solicitações',
-        headerShown: true,
-      }}
-    />
+      <Stack.Screen
+        name="historico"
+        options={{
+          title: 'Histórico de solicitações',
+          headerShown: true,
+        }}
+      />
 
-    <Stack.Screen
-      name="configuracoes"
-      options={{
-        title: 'Configurações da conta',
-        headerShown: true,
-      }}
-    />
+      <Stack.Screen
+        name="configuracoes"
+        options={{
+          title: 'Configurações da conta',
+          headerShown: true,
+        }}
+      />
 
-    <Stack.Screen
-      name="suporte"
-      options={{
-        title: 'Suporte',
-        headerShown: true,
-      }}
-    />
+      <Stack.Screen
+        name="suporte"
+        options={{
+          title: 'Suporte',
+          headerShown: true,
+        }}
+      />
 
-    <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
-    <Stack.Screen name="(auth)/cadastro" options={{ headerShown: false }} />
-  </Stack>
+      <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)/cadastro" options={{ headerShown: false }} />
+    </Stack>
+    </ThemeProvider>
+    
   );
 }

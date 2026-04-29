@@ -1,15 +1,17 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Switch } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTheme } from './ThemeContext';
 
 export default function Configuracoes() {
   const [notificacoes, setNotificacoes] = useState(true);
-  const [modoEscuro, setModoEscuro] = useState(false);
+  const { modoEscuro, alternarTema, tema } = useTheme();
   const [localizacao, setLocalizacao] = useState(true);
 
   return (
     <ScrollView
-      style={styles.container}
+       style={[styles.container, { backgroundColor: tema.fundo }]}
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
@@ -70,7 +72,7 @@ export default function Configuracoes() {
 
           <Switch
             value={modoEscuro}
-            onValueChange={setModoEscuro}
+            onValueChange={alternarTema}
             trackColor={{ false: '#D9D9D9', true: '#F7A9C9' }}
             thumbColor={modoEscuro ? '#E83D84' : '#F4F4F4'}
           />

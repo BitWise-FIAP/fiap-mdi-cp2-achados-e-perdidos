@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useTheme } from '../ThemeContext';
 
 export default function Perfil() {
+  const { tema } = useTheme();
   const router = useRouter();
   const [user, setUser] = useState(null);
 
@@ -59,7 +61,7 @@ export default function Perfil() {
 
   return (
     <ScrollView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: tema.fundo }]}
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
