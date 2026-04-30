@@ -118,13 +118,13 @@ npx expo start
 📸 Screenshots e Gif
 
 ### Gif - Sistema 
-![Sistema](./screens/screens/ScreenRecording_04-29-2026 10-03-19 PM_1.mp4)
+[▶️ Ver vídeo do sistema](./screens/ScreenRecording_04-29-2026-10-03-19 PM_1.mp4)
 
 ### Nova Funcionalidade - Modo Escuro e Telas de Login e Cadastro de Conta
-![Home](./screens/screens/IMG_9537.PNG)
-![Home](./screens/screens/IMG_9539.PNG)
-![Home](./screens/screens/IMG_9540.PNG)
-![Home](./screens/screens/IMG_9542.PNG)
+![Home](./screens/IMG_9537.PNG)
+![Home](./screens/IMG_9539.PNG)
+![Home](./screens/IMG_9540.PNG)
+![Home](./screens/IMG_9542.PNG)
 
 
 ### 🏠 Home
