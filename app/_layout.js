@@ -22,18 +22,7 @@ export default function RootLayout() {
     checkAuth();
   }, []);
 
-  useEffect(() => {
-    const limparItens = async () => {
-      try {
-        await AsyncStorage.removeItem('itens');
-        console.log('Itens cadastrados foram apagados ao abrir o app.');
-      } catch (error) {
-        console.log('Erro ao limpar itens:', error);
-      }
-    };
-
-    limparItens();
-  }, []);
+  
 
   if (loading) {
     return (

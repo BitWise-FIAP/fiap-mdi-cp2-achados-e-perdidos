@@ -8,6 +8,26 @@ import { useTheme } from '../ThemeContext';
 
 import itensData from '../../storage/itens.json';
 
+const imagensLocais = {
+  mochila: require('../../assets/mochila.jpg'),
+  caderno: require('../../assets/caderno.avif'),
+  fone: require('../../assets/fone.jpg'),
+  garrafa: require('../../assets/garrafa.png'),
+  casaco: require('../../assets/casaco.jpg'),
+};
+
+const getImagem = (imagem) => {
+  if (!imagem) {
+    return imagensLocais.default;
+  }
+
+  if (imagem.startsWith('http') || imagem.startsWith('file')) {
+    return { uri: imagem };
+  }
+
+  return imagensLocais[imagem] || imagensLocais.default;
+};
+
 export default function Itens() {
   const router = useRouter();
   const [itens, setItens] = useState([]);
@@ -36,7 +56,7 @@ export default function Itens() {
           itens.map(item => (
             <View key={item.id} style={[styles.card, { backgroundColor: tema.card }, {borderColor: tema.borda}]}>
               <Image 
-                source={{ uri: item.imagem }}
+                source={getImagem(item.imagem)}
                 style={styles.imagem}
                 resizeMode="cover"
                 onError={(e) => console.log('ERRO IMG:', item.imagem)}

@@ -5,7 +5,7 @@
     "descricao": "Mochila com cadernos e estojo dentro",
     "local_perdido": "Biblioteca",
     "data": "2026-03-20",
-    "imagem": "https://30706.cdn.simplo7.net/static/30706/sku/mochilas-mochila-couro-brooklyn-preta--p-1554154709838.jpg"
+    "imagem": "mochila"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "descricao": "Caderno universitário com anotações de cálculo",
     "local_perdido": "Sala de aula B203",
     "data": "2026-03-18",
-    "imagem": "https://img.freepik.com/fotos-premium/um-caderno-azul-com-uma-caneta-e-uma-caneta-na-mesa_1235831-198430.jpg"
+    "imagem": "caderno"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "descricao": "Fone preto sem fio (apenas um lado)",
     "local_perdido": "Laboratório de informática",
     "data": "2026-03-15",
-    "imagem": "https://blog.waaw.com.br/wp-content/uploads/2022/08/fones-de-ouvido-alok-1200x640.jpg"
+    "imagem": "fone"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "descricao": "Garrafa vermelha reutilizável",
     "local_perdido": "Quadra / área esportiva",
     "data": "2026-03-10",
-    "imagem": "https://www.estadao.com.br/recomenda/wp-content/uploads/2024/09/garrafa-stanley-7.png.webp"
+    "imagem": "garrafa"
   },
   {
     "id": 5,
@@ -37,6 +37,6 @@
     "descricao": "Moletom esquecido",
     "local_perdido": "Cantina",
     "data": "2026-03-12",
-    "imagem": "https://images.unsplash.com/photo-1520975916090-3105956dac38"
+    "imagem": "casaco"
   }
 ]
