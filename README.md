@@ -122,10 +122,10 @@ npx expo start
 
 ### Nova Funcionalidade - Modo Escuro e Telas de Login e Cadastro de Conta
 <p align="center">
-  <img src="./screens/img1.PNG" width="220"/>
-  <img src="./screens/img2.PNG" width="220"/>
-  <img src="./screens/img3.PNG" width="220"/>
-  <img src="./screens/img4.PNG" width="220"/>
+  <img src="./screens/img1.PNG" width="300"/>
+  <img src="./screens/img2.PNG" width="300"/>
+  <img src="./screens/img3.PNG" width="300"/>
+  <img src="./screens/img4.PNG" width="300"/>
 </p>
 
 
