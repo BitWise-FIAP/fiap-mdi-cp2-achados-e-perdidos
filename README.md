@@ -121,11 +121,12 @@ npx expo start
 ![Sistema](./screens/ScreenRecording_04-29-2026%2010-03-19 PM_1.gif)
 
 ### Nova Funcionalidade - Modo Escuro e Telas de Login e Cadastro de Conta
-<img src="./screens/img1.PNG" width="220"/>
-<img src="./screens/img2.PNG" width="220"/>
-<img src="./screens/img3.PNG" width="220"/>
-<img src="./screens/img4.PNG" width="220"/>
-
+<p align="center">
+  <img src="./screens/img1.PNG" width="220"/>
+  <img src="./screens/img2.PNG" width="220"/>
+  <img src="./screens/img3.PNG" width="220"/>
+  <img src="./screens/img4.PNG" width="220"/>
+</p>
 
 
 ### 🏠 Home
